@@ -1,0 +1,28 @@
+{
+  "engine": "Piper local neural synthesis",
+  "model": "ar_JO-kareem-medium",
+  "modelSource": "https://huggingface.co/rhasspy/piper-voices",
+  "clips": [
+    {
+      "src": "assets/call-ar-1.mp3",
+      "duration": 6.191,
+      "spokenText": "أَهْلًا بِكَ! هَلْ فَكَّرْتَ يَوْمًا أَيْنَ تَنْتَهِي الْمَوَادُّ الَّتِي تَخْرُجُ مِنْ مُنْشَأَتِكَ؟"
+    },
+    {
+      "src": "assets/call-ar-2.mp3",
+      "duration": 7.654,
+      "spokenText": "هَذِهِ لَيْسَتْ نِهَايَةَ الْحِكَايَةِ. فَقَدْ تُصْبِحُ مَوَادُّكَ بِدَايَةَ إِنْتَاجٍ جَدِيدٍ فِي مَصْنَعٍ آخَرَ!"
+    },
+    {
+      "src": "assets/call-ar-3.mp3",
+      "duration": 9.718,
+      "spokenText": "مَعَ أُوكْسِيرَا، اِكْتَشِفْ سُوقَ الْمَوَادِّ الْقَابِلَةِ لِإِعَادَةِ التَّدْوِيرِ. قَارِنِ الْعُرُوضَ، وَاخْتَرْ مَا يُنَاسِبُكَ، وَنَسِّقِ النَّقْلَ."
+    },
+    {
+      "src": "assets/call-ar-4.mp3",
+      "duration": 5.198,
+      "spokenText": "أُوكْسِيرَا. مَا يُهْدَرْ، يُسْتَثْمَرْ! أَرْسَلْتُ لَكَ التَّفَاصِيلَ فِي الرَّسَائِلِ."
+    }
+  ],
+  "postProcessing": "ffmpeg rubberband pitch x1.10 tempo x1.10 (formant preserved), presence/air EQ, compression, loudnorm -15 LUFS (26 Nov 2026)"
+}

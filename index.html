@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="أوكسيرا">
+<meta name="format-detection" content="telephone=no">
+<title>أوكسيرا | ما يُهدر يُستَثمَر</title>
+<meta name="description" content="إعلان تفاعلي من أوكسيرا: جوال يخفي فرصة. ردّ على المكالمة واكتشف سوق المواد القابلة لإعادة التدوير.">
+<meta property="og:title" content="أوكسيرا | ما يُهدر يُستَثمَر">
+<meta property="og:description" content="هذا الجوال يخفي فرصة… والفرصة تنتظر من يردّ.">
+<meta property="og:image" content="assets/social-1.webp">
+<link rel="icon" href="assets/app-icon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="preload" href="assets/fonts/ibm-plex-sans-arabic-arabic-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="style.css?v=4">
+</head>
+<body>
+<main class="stage" id="stage">
+  <aside class="editorial" aria-label="عن الإعلان">
+    <img class="ed-logo" src="assets/oxcira-logo-white.png" alt="OxCira — أوكسيرا" width="420" height="147">
+    <div class="ed-body">
+      <p class="eyebrow">إعلان تفاعلي · نحو دقيقة</p>
+      <h1>ما يُهدر <em>يُستَثمَر.</em></h1>
+      <p class="ed-intro" id="ed-intro"></p>
+      <ol class="ed-steps">
+        <li><b>١</b><span>اضغط «ابدأ التجربة» وارفع الصوت.</span></li>
+        <li><b>٢</b><span>ردّ على «الفرصة التالية».</span></li>
+        <li><b>٣</b><span>استكشف الجوال: السوق، الرسائل، الصور، القنوات.</span></li>
+      </ol>
+    </div>
+    <footer class="ed-foot">
+      <a class="ed-link" data-ext href="https://www.oxcira.sa/ar/marketplace" target="_blank" rel="noopener" id="ed-market">تصفّح السوق مباشرة</a>
+      <button type="button" class="ed-install" id="ed-install" hidden>ثبّت أوكسيرا كتطبيق</button>
+      <button type="button" class="ed-sound" id="ed-sound" aria-pressed="false"><span class="ico" aria-hidden="true"></span><span class="lbl">الصوت مفعّل</span></button>
+    </footer>
+  </aside>
+
+  <section class="device-wrap" aria-label="تجربة الجوال التفاعلية">
+    <div class="device" id="device">
+      <button type="button" class="btn-side b1" id="btn-action" aria-label="زر الإجراء: كتم أو تشغيل الصوت"></button><button type="button" class="btn-side b2" id="btn-volup" aria-label="رفع الصوت"></button><button type="button" class="btn-side b3" id="btn-voldown" aria-label="خفض الصوت"></button><button type="button" class="btn-side b4" id="btn-power" aria-label="زر التشغيل: قفل الجوال أو إيقاظه"></button>
+      <div class="screen" id="screen"><div class="glass" aria-hidden="true"></div>
+        <div class="wallpaper" aria-hidden="true"><i class="glow g1"></i><i class="glow g2"></i><i class="pattern"></i></div>
+
+        <header class="statusbar" id="statusbar">
+          <time class="sb-time" id="sb-time" dir="ltr"></time>
+          <button type="button" class="island" id="island" aria-label="العودة إلى المكالمة" tabindex="-1">
+            <span class="isl-live" aria-hidden="true"><span class="isl-dot"></span><span class="isl-wave"><i></i><i></i><i></i><i></i></span></span>
+            <span class="isl-timer" id="isl-timer" dir="ltr">0:00</span>
+          </button>
+          <span class="sb-icons" aria-hidden="true">
+            <svg viewBox="0 0 18 12" class="sig"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+            <svg viewBox="0 0 16 12" class="wifi"><path d="M8 11.5 5.6 9a3.4 3.4 0 0 1 4.8 0zM3.6 7a6.2 6.2 0 0 1 8.8 0l-1.3 1.4a4.4 4.4 0 0 0-6.2 0zM1.3 4.7a9.5 9.5 0 0 1 13.4 0L13.4 6a7.6 7.6 0 0 0-10.8 0z"/></svg>
+            <span class="batt"><i></i></span>
+          </span>
+        </header>
+
+        <section class="lock" id="lock" aria-label="شاشة القفل"></section>
+        <section class="home" id="home" aria-label="الشاشة الرئيسية" hidden></section>
+        <section class="app" id="app" role="region" aria-label="التطبيق" hidden></section>
+        <div class="banners" id="banners" aria-live="polite"></div>
+        <section class="call" id="call" role="dialog" aria-modal="true" aria-label="مكالمة ضمن التجربة" hidden></section>
+        <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="عارض الصور" hidden></div>
+        <div class="sheet-wrap" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" hidden></div>
+        <div class="gate" id="gate"></div>
+        <div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+        <button type="button" class="homebar" id="homebar" aria-label="العودة إلى الشاشة الرئيسية"><i></i></button>
+      </div>
+    </div>
+  </section>
+</main>
+<noscript><p class="noscript">تحتاج هذه التجربة التفاعلية إلى تفعيل JavaScript. يمكنك زيارة <a href="https://www.oxcira.sa/ar">موقع أوكسيرا</a> أو <a href="https://www.oxcira.sa/ar/marketplace">السوق</a> مباشرة.</p></noscript>
+<script src="config.js?v=4"></script>
+<script src="app.js?v=4"></script>
+</body>
+</html>
